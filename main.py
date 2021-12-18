@@ -30,8 +30,9 @@ if __name__ == '__main__':
             print("Error: The provided putative ingredient S(2,4,v) is not, in fact, an S(2,4,v)!")
         # get the storage system ss, represented as an S(2,4,u)
         ss = TVP1.three_v_plus_one_construction(v, s24v_ingred)
-        print("Here is the S(2,4,%d) representing the storage system, having guaranteed MinSum at least (4*u + 2)/3 =" % (u), (4*u + 2)//3, ":\n")
+        print("Here is the S(2,4,%d) representing the storage system, having guaranteed MinSum at least (4*u + 2)/3 = %d:\n" % (u, (4*u + 2)//3))
         for block in ss:
+            block.sort()
             print(block)
     else:
         print("Error: The number of files must be congruent to 13 or 40 modulo 108.")
