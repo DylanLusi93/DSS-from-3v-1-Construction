@@ -7,18 +7,14 @@ def three_v_plus_one_construction(v, s_2_4_v):
     s_2_4_3v_plus_1 = []
     kts_order = 2*v + 1
     als_order = kts_order//3
-    if als_order % 18 in [3, 15] and als_order > 15 and als_order % 5 != 0:
-        # force s_2_4_v onto point set [2v + 1, 3v]
-        for idx, quadruple in enumerate(s_2_4_v):
-            quadruple = [x + kts_order for x in quadruple]
-            s_2_4_v[idx] = quadruple
-        bats = BR.bats_from_br(als_order)
-        for x in range(2*v + 1, 3*v + 1):
-            for triple in bats[x - (2*v + 1)]:
-                s_2_4_3v_plus_1 = s_2_4_3v_plus_1 + [[x] + triple]
+    # force s_2_4_v onto point set [2v + 1, 3v]
+    for idx, quadruple in enumerate(s_2_4_v):
+        quadruple = [x + kts_order for x in quadruple]
+        s_2_4_v[idx] = quadruple
+    bats = BR.bats_from_br(als_order)
+    for x in range(2*v + 1, 3*v + 1):
+        for triple in bats[x - (2*v + 1)]:
+            s_2_4_3v_plus_1 = s_2_4_3v_plus_1 + [[x] + triple]
 
-    else:
-        print("Error: Invalid v. (2v + 1)/3 must be congruent to 3 or 15 mod 18, must be greater than 15, and must not"
-              " be divisible by 5.")
     s_2_4_3v_plus_1 = s_2_4_3v_plus_1 + s_2_4_v
     return s_2_4_3v_plus_1
