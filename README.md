@@ -3,4 +3,4 @@ Constructs an access-balanced (distributed) storage system by applying the 3v+1 
 
 A sample ingredient S(2,4,76) (obtained via the Moore construction) is provided in testFile, which you may use to test the program. If you do opt to do this, set u (number of files) to 76*3 + 1 = 229 when prompted.
 
-For an introduction on the mathematical model used to construct access-balanced storage systems, see the introduction + background section of my attached dissertation. 
+For an introduction on the mathematical model used here to construct access-balanced storage systems, see the introduction + background section of my attached dissertation. 
